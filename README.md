@@ -1,23 +1,26 @@
 # MockMate
 
-A simple AI-powered mock interview app built with Next.js, Firebase, Tailwind CSS, and Vapi voice agents.
+A lightweight, AI-powered mock interview application built with Next.js, Firebase, Tailwind CSS and Vapi voice agents. Designed for quick setup and iterative development so you can run realistic interview sessions and receive AI-driven feedback.
 
-## Features
+## Key features
 
-- Email/password auth (Firebase)
-- Generate interview questions (Gemini)
-- Voice interview via Vapi workflow
-- AI feedback with scores and breakdown
+- Email/password authentication (Firebase)
+- Generate role-based interview questions (Google Generative AI)
+- Voice-driven interview sessions via Vapi workflows
+- AI feedback with scores and per-topic breakdowns
+- Responsive UI using Tailwind CSS
 
-## Setup
+## Quickstart
 
-1. Install
+1. Install dependencies
 
 ```bash
 npm install
 ```
 
-2. Environment (.env.local)
+2. Create environment file
+
+Copy `.env.local.example` to `.env.local` (or create `.env.local`) and set the variables:
 
 ```env
 NEXT_PUBLIC_VAPI_WEB_TOKEN=
@@ -37,7 +40,7 @@ FIREBASE_CLIENT_EMAIL=
 FIREBASE_PRIVATE_KEY=
 ```
 
-3. Run
+3. Run the app (development)
 
 ```bash
 npm run dev
@@ -47,11 +50,27 @@ Open http://localhost:3000
 
 ## Scripts
 
-- `npm run dev` – start dev server
-- `npm run build` – build
-- `npm run start` – production
-- `npm run lint` – lint
+- `npm run dev` — start development server
+- `npm run build` — build for production
+- `npm run start` — start production server
+- `npm run lint` — run linter
 
-## Tech
+## Recommended workflow
 
-Next.js · Firebase · Tailwind CSS · Vapi · Zod
+- Keep secrets out of source control — use `.env.local` and CI secrets for production.
+- Use Firebase service account variables for server-side operations.
+- Test voice workflows in Vapi dashboard before connecting to the frontend token.
+
+## Tech stack
+
+Next.js · Firebase · Tailwind CSS · Vapi · Zod · Google Generative AI
+
+## Contributing
+
+- Fork the repo, create a branch, and open a PR.
+- Keep changes focused and include tests where applicable.
+- Run `npm run lint` and verify the app runs locally before submitting.
+
+## License
+
+Specify a license (e.g., MIT) in `LICENSE` if you plan to open source this project.
